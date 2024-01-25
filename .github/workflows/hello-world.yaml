@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: goodbye world
-        run: echo "goodbye world"
+        run: echo "goodbye worldi"
         shell: bash
 on:
   push:
