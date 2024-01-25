@@ -3,9 +3,6 @@ jobs:
   run-on-issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump github context
-        run: echo "$GITHUB_CONTEXT" | jq
-        shell: bash
       - name: "bot respond to issue"
         run: |
           gh api -X POST \ 
