@@ -2,6 +2,8 @@ name: Create a comment on new issues
 jobs:
   run-on-issue:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: "bot respond to issue"
         run: |
