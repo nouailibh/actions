@@ -9,11 +9,11 @@ jobs:
       - name: "bot respond to issue"
         run: |
           gh api -X POST \ 
-            http://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            http://api.github.com/repo/${OWNER}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
             -f body='Comment on issue.'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          ORGANIZATION: ${{github.event.organization.login}}
+          OWNER: ${{github.event.owner.login}}
           REPOSITORY: ${{github.event.repository.name}}
           GITHUB_CONTEXT: ${{github.event}}
           ISSUE_NUMBER: ${{github.event.issue.number}}
