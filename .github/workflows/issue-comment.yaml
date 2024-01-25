@@ -3,6 +3,9 @@ jobs:
   run-on-issue:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump github context
+        run: echo "$GITHUB_CONTEXT" | jq
+        shell: bash
       - name: "bot respond to issue"
         run: |
           gh api -X POST \ 
@@ -12,6 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           ORGANIZATION: ${{github.event.organization.login}}
           REPOSITORY: ${{github.event.repository.name}}
+          GITHUB_CONTEXT: ${{github.event}}
           ISSUE_NUMBER: ${{github.event.issue.number}}
 on:
   issues:
