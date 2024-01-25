@@ -6,7 +6,7 @@ jobs:
       - name: "bot respond to issue"
         run: |
           gh api -X POST \ 
-            http://api.github.com/repo/${OWNER}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            https://api.github.com/repos/${OWNER}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
             -f body='Comment on issue.'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
