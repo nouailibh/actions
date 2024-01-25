@@ -18,9 +18,6 @@ jobs:
         run: echo "goodbye worldi"
         shell: bash
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
