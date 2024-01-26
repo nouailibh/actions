@@ -1,14 +1,13 @@
-name: Create a comment on new issues
-jobs:
-  run-on-issue:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "bot respond to issue"
-        run: |
-          gh issue comment $ISSUE --body "Thank you for opening this issue!"
-        env:
-          ISSUE: ${{github.event.issue.number}}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+name: Comment when opened
 on:
   issues:
-    types: [opened]
+    types:
+      - opened
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
