@@ -27,6 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     # Define the steps for this job
     steps:
+      - uses: actions/checkout@v4
+        name: "Checkout repository"
+
       - name: "Install Dependencies"
         run: npm install
 
