@@ -1,24 +1,24 @@
-name: Hello world wrkf
+# name: Hello world wrkf
 
-jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: hello world
-        run: echo "Hello worldax"
-        shell: bash
-      - name: hello world II
-        run: echo "Hello worldax II"
-        shell: bash
-  goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: goodbye world
-        run: echo "goodbye worldi"
-        shell: bash
-on:
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+# jobs:
+#   hello:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: hello world
+#         run: echo "Hello worldax"
+#         shell: bash
+#       - name: hello world II
+#         run: echo "Hello worldax II"
+#         shell: bash
+#   goodbye:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: goodbye world
+#         run: echo "goodbye worldi"
+#         shell: bash
+# on:
+#   pull_request:
+#     branches:
+#       - main
+#   workflow_dispatch:
