@@ -29,7 +29,7 @@ jobs:
       - name: "Install Dependencies"
         run: npm install
 
-      - name: "Run Tests"
+      - name: "Run Test"
         run: npm run test
 
   # Run the linter to check for code style issues
