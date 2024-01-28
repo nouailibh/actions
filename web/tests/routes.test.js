@@ -24,6 +24,6 @@ describe("Users endpoint", () => {
   it("should return hello:world", async () => {
     const res = await request(app).get("/users");
     console.log(res.body);
-    expect(res.body).toEqual({ hello: "word" });
+    expect(res.body).toEqual({ hello: "world" });
   });
 });
