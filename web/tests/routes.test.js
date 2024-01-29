@@ -19,3 +19,11 @@ describe("New Endpoint", () => {
     expect(res.statusCode).toEqual(201);
   });
 });
+
+describe("Users endpoint", () => {
+  it("should return hello:world", async () => {
+    const res = await request(app).get("/users");
+    console.log(res.body);
+    expect(res.body).toEqual({ hello: "world" });
+  });
+});
